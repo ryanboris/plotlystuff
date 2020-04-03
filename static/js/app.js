@@ -1,7 +1,9 @@
 //Creating function for Data plotting (Bar, gauge, bubble)
 function getPlot(id) {
   // getting data from the json file
-  d3.json('http://localhost:5500/samples.json').then(data => {
+  d3.json(
+    'https://raw.githubusercontent.com/ryanboris/plotlystuff/master/samples.json'
+  ).then(data => {
     console.log(data)
     var wfreq = data.metadata.map(d => d.wfreq)
     console.log(`Washing Freq: ${wfreq}`)
@@ -100,7 +102,9 @@ function getPlot(id) {
 // create the function to get the necessary data
 function getInfo(id) {
   // read the json file to get data
-  d3.json('http://localhost:5500/samples.json').then(data => {
+  d3.json(
+    'https://raw.githubusercontent.com/ryanboris/plotlystuff/master/samples.json'
+  ).then(data => {
     // get the metadata info for the demographic panel
     var metadata = data.metadata
     console.log(metadata)
@@ -128,7 +132,9 @@ function init() {
   // select dropdown menu
   var dropdown = d3.select('#selDataset')
   // read the data
-  d3.json('http://localhost:5500/samples.json').then(data => {
+  d3.json(
+    'https://raw.githubusercontent.com/ryanboris/plotlystuff/master/samples.json'
+  ).then(data => {
     console.log(data)
     // get the id data to the dropdwown menu
     data.names.forEach(function(name) {
